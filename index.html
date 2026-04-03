@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olukayode A. | Software Engineer</title>
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M 35 25 A 25 25 0 1 0 35 75 A 25 25 0 1 0 35 25' stroke='%23005AC1' stroke-width='15' fill='none'/><path d='M 70 20 L 45 80 M 70 20 L 95 80 M 57 60 L 83 60' stroke='%23001A41' stroke-width='15' stroke-linecap='round' stroke-linejoin='round' fill='none' opacity='0.9'/></svg>" type="image/svg+xml">
+    <!-- Minimalist "OA." Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='72' x='50' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='65' fill='%231A1C1E'>OA.</text></svg>" type="image/svg+xml">
 
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -17,7 +18,8 @@
     <style>
         /* Material 3 Expressive Baseline Theme */
         :root {
-            --md-sys-color-background: #FDFBFF;
+            /* Updated to a warm, cream off-white */
+            --md-sys-color-background: #FAF9F6;
             --md-sys-color-on-background: #1A1C1E;
             --md-sys-color-surface-variant: #E1E2EC;
             --md-sys-color-primary: #005AC1;
@@ -64,13 +66,6 @@
         /* Make the top line turn blue on hover to match the bottom line */
         .text-elongated:not(.text-blue-600):hover {
             color: var(--md-sys-color-primary);
-        }
-
-        /* Hero 3D Container */
-        #hero-container {
-            transition: transform 0.2s ease-out;
-            transform-style: preserve-3d;
-            will-change: transform;
         }
 
         /* Material 3 Expressive Card styling */
@@ -160,7 +155,7 @@
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 pt-16 pb-12 flex-grow w-full perspective-[1000px]">
+    <main class="max-w-5xl mx-auto px-6 pt-16 pb-12 flex-grow w-full">
         
         <div id="hero-container" class="mb-16 pt-8 max-w-4xl">
             <h1 class="text-[clamp(4.5rem,10vw,8.5rem)] text-gray-900 leading-[0.75] drop-shadow-sm">
@@ -235,7 +230,7 @@
             </div>
         </div>
 
-        <div class="mt-32 m3-card p-10 md:p-14 text-center bg-gray-100 hover:shadow-xl transition-shadow duration-300">
+        <div class="mt-32 m3-card p-10 md:p-14 text-center bg-[#FDFBF7] hover:shadow-xl transition-shadow duration-300">
             <span class="material-symbols-outlined text-5xl mb-6 text-gray-500">verified_user</span>
             <h2 class="text-3xl font-bold mb-6 text-gray-900">Engineering Philosophy</h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -248,28 +243,5 @@
         <p>Made for you by Olukayode A. &copy; 2026</p>
     </footer>
 
-    <!-- Interactive Hero JS script -->
-    <script>
-        const heroContainer = document.getElementById('hero-container');
-        
-        document.addEventListener('mousemove', (e) => {
-            if (!heroContainer) return;
-            
-            // Calculate mouse position relative to the center of the window
-            // The divisor controls the intensity of the tilt (higher = softer)
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 45;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 45;
-            
-            // Apply a subtle 3D tilt
-            heroContainer.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
-
-        // Smoothly reset when the mouse leaves the browser window
-        document.addEventListener('mouseleave', () => {
-            if (heroContainer) {
-                heroContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
-            }
-        });
-    </script>
 </body>
 </html>
